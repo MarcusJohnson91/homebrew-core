@@ -1,11 +1,17 @@
 class Gcc < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-10.1.0/gcc-10.1.0.tar.xz"
-  mirror "http://mirror.us-midwest-1.nexcess.net/gnu/gcc/gcc-10.1.0/gcc-10.1.0.tar.xz"
-  sha256 "b6898a23844b656f1b68691c5c012036c2e694ac4b53a8918d4712ad876e7ea2"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-9.3.0/gcc-9.3.0.tar.xz"
+  sha256 "71e197867611f6054aa1119b13a0c0abac12834765fe2d81f35ac57f84f742d1"
   revision 1
   head "https://gcc.gnu.org/git/gcc.git"
+
+  bottle do
+    sha256 "57e53d66ad43fe05b5a2f93d6a7cfd472713ac03e9d9c9d0d0187cdc7a273153" => :catalina
+    sha256 "de8319322428721741a0dc41dfdf2eece80e0215a7a4a861e0e206a9bfbca583" => :mojave
+    sha256 "e50b9cfee063619515a8f164485b3f730077f21b49b7bb30cc5a600ddf577a83" => :high_sierra
+  end
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
